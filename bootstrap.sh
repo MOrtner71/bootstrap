@@ -60,7 +60,7 @@ git config --global credential.helper store
 git config --global init.defaultBranch main
 
 # Validate the token by hitting the GitHub API
-curl -H "Authorization: token ${GH_PAT}" https://api.github.com/user >/dev/null 2>&1 || {
+curl -f -H "Authorization: token ${GH_PAT}" https://api.github.com/user >/dev/null 2>&1 || {
   echo "GitHub token validation failed" >&2
   exit 1
 }
